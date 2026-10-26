@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saeid Zare, Ph.D. | Combustion, CFD and Thermal-Fluids R&amp;D Engineer</title>
+<meta name="description" content="Saeid Zare, Ph.D. Senior R&amp;D Engineer at Faber Burner Company working on combustion, CFD and thermal-fluid systems. Patents, publications and CV.">
+<link rel="canonical" href="https://saeidzare89.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Saeid Zare, Ph.D.">
+<meta property="og:description" content="Senior R&amp;D Engineer: combustion, CFD and thermal-fluid systems.">
+<meta property="og:url" content="https://saeidzare89.github.io/">
+<meta property="og:image" content="https://saeidzare89.github.io/photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4471c'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESZ%3C/text%3E%3C/svg%3E">
+
+<!-- Lets search engines show your name, job and profiles properly -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saeid Zare",
+  "honorificSuffix": "Ph.D.",
+  "jobTitle": "Senior Research and Development Engineer",
+  "worksFor": {"@type": "Organization", "name": "Faber Burner Company"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Mississippi State University"},
+    {"@type": "CollegeOrUniversity", "name": "Ferdowsi University of Mashhad"}
+  ],
+  "url": "https://saeidzare89.github.io/",
+  "sameAs": [
+    "https://www.linkedin.com/in/saeidzare89",
+    "https://scholar.google.com/citations?user=WyWVX4AAAAAJ"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f6f7;
+    --text: #16191d;
+    --muted: #545c65;
+    --line: #e2e5e9;
+    --accent: #b4471c;        /* burnt orange: a nod to combustion */
+    --accent-text: #ffffff;
+    --accent-soft: #fbeee8;
+    --max: 880px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111315;
+      --surface: #1a1d20;
+      --text: #e8eaed;
+      --muted: #a4acb5;
+      --line: #2c3136;
+      --accent: #f0915f;
+      --accent-text: #1a1209;
+      --accent-soft: #2b1e16;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 16px; top: 12px; background: var(--bg); padding: 6px 10px; z-index: 10; }
+
+  /* ---------- header ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; gap: 8px 20px; min-height: 60px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--text); font-size: 17px; margin-right: auto; }
+  .brand:hover { text-decoration: none; }
+  .nav ul { position: relative; display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+  .nav ul a { color: var(--muted); font-size: 15px; font-weight: 500; transition: color .2s; }
+  .nav ul a:hover, .nav ul a.active { color: var(--text); text-decoration: none; }
+  /* The bar under the menu link of the section on screen; moved by the script at the bottom */
+  .nav .indicator {
+    position: absolute; left: 0; top: 0; height: 2px; width: 0;
+    background: var(--accent); border-radius: 2px; opacity: 0; pointer-events: none;
+    transition: transform .3s ease, width .3s ease, opacity .2s ease;
+  }
+  @media (prefers-reduced-motion: reduce) { .nav .indicator { transition: none; } }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--text);
+    font-size: 15px; font-weight: 600; line-height: 1.2;
+    background: var(--bg);
+  }
+  .btn:hover { text-decoration: none; border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+  .btn.primary:hover { filter: brightness(1.08); }
+  .btn.small { padding: 6px 14px; font-size: 14px; }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; padding: 64px 0 40px; }
+  .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .hero .role { font-size: 20px; color: var(--muted); margin: 0 0 20px; font-weight: 500; }
+  .hero .bio { margin: 0 0 24px; max-width: 34em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .photo {
+    width: 180px; height: 180px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center;
+    font-size: 56px; font-weight: 700; letter-spacing: 0.02em;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+
+  /* ---------- numbers ---------- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 0 0 8px; padding: 0; list-style: none; }
+  .stats li { background: var(--surface); border-radius: 14px; padding: 16px 18px; }
+  .stats b { display: block; font-size: 30px; line-height: 1.1; color: var(--accent); }
+  .stats span { color: var(--muted); font-size: 15px; }
+
+  /* ---------- sections ---------- */
+  section { padding: 44px 0 4px; }
+  h2 { font-size: 26px; margin: 0 0 18px; padding-bottom: 10px; border-bottom: 1px solid var(--line); letter-spacing: -0.01em; }
+  h3 { font-size: 18px; margin: 0 0 4px; line-height: 1.35; }
+  .muted { color: var(--muted); }
+
+  .rows { display: grid; grid-template-columns: 190px 1fr; gap: 10px 24px; margin: 0; }
+  .rows dt { font-weight: 700; }
+  .rows dd { margin: 0; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--surface); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .card .tag { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+  .card p { margin: 0; font-size: 16px; }
+  .card img { width: 100%; border-radius: 10px; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  .job { display: grid; grid-template-columns: 1fr auto; gap: 0 16px; margin: 0 0 26px; }
+  .job .when { color: var(--muted); font-size: 15px; white-space: nowrap; }
+  .job .where { grid-column: 1 / -1; color: var(--muted); margin-bottom: 6px; }
+  .job ul { grid-column: 1 / -1; margin: 4px 0 0; padding-left: 20px; }
+  .job li { margin: 3px 0; }
+  .early { list-style: none; padding: 0; margin: 0; }
+  .early li { display: grid; grid-template-columns: 1fr auto; gap: 0 16px; padding: 10px 0; border-top: 1px solid var(--line); }
+  .early li:first-child { border-top: 0; padding-top: 0; }
+  .early .what { grid-column: 1 / -1; color: var(--muted); font-size: 16px; }
+
+  h3.list { font-size: 17px; margin: 26px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  ol.pubs { margin: 0; padding-left: 0; list-style: none; counter-reset: pub; }
+  ol.pubs li { position: relative; padding-left: 44px; margin: 0 0 14px; font-size: 16px; }
+  ol.pubs li::before {
+    counter-increment: pub; content: attr(data-k) counter(pub);
+    position: absolute; left: 0; top: 1px;
+    font-size: 13px; font-weight: 700; color: var(--accent);
+  }
+  .venue { font-style: italic; }
+  .me { font-weight: 700; }
+  .link { font-size: 14px; font-weight: 600; white-space: nowrap; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .plain { list-style: none; padding: 0; margin: 0; }
+  .plain li { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 16px; }
+  .plain li:first-child { border-top: 0; }
+
+  .contact { background: var(--surface); border-radius: 18px; padding: 28px; margin-top: 8px; }
+  .contact p { margin: 0 0 16px; }
+
+  footer { color: var(--muted); font-size: 14px; padding: 40px 0 48px; }
+
+  /* ---------- narrow screens ---------- */
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .nav { padding-top: 10px; padding-bottom: 10px; }
+    ol.pubs li { padding-left: 36px; }
+    .nav ul { order: 3; width: 100%; flex-wrap: wrap; gap: 10px 16px; }
+    .nav ul a { white-space: nowrap; font-size: 14px; }
+    .hero { grid-template-columns: 1fr; gap: 24px; padding: 36px 0 28px; }
+    .hero .photo { order: -1; width: 120px; height: 120px; font-size: 38px; }
+    .hero h1 { font-size: 34px; }
+    .hero .role { font-size: 18px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .rows { grid-template-columns: 1fr; gap: 2px; }
+    .rows dd { margin-bottom: 12px; }
+    .cards { grid-template-columns: 1fr; }
+    .two { grid-template-columns: 1fr; }
+    .job { grid-template-columns: 1fr; }
+    .job .when { margin-bottom: 2px; }
+  }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Saeid Zare</a>
+    <ul>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="indicator" aria-hidden="true"></li>
+    </ul>
+    <!-- Put the PDF of your CV next to this file, named Saeid_Zare_CV.pdf -->
+    <a class="btn small primary" href="Saeid_Zare_CV.pdf">CV</a>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- ===================== Hero ===================== -->
+  <div class="hero" id="top">
+    <div>
+      <h1>Saeid Zare, Ph.D.</h1>
+      <p class="role">Senior R&amp;D Engineer · Combustion, CFD and thermal-fluid systems</p>
+      <p class="bio">
+        I am a mechanical engineer working on combustion, heat transfer and CFD. As a
+        Senior R&amp;D Engineer at Faber Burner Company, I develop industrial burners from
+        simulation and design through testing, with a focus on lower emissions. My Ph.D.
+        at Mississippi State University was in plasma-assisted combustion, partly funded
+        by NASA. I am based in Pennsylvania.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="Saeid_Zare_CV.pdf">Download CV</a>
+        <a class="btn" href="mailto:saeidzare.me@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/saeidzare89">LinkedIn</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=WyWVX4AAAAAJ">Google Scholar</a>
+      </div>
+    </div>
+    <img class="photo" src="photo.jpg" alt="Saeid Zare" width="180" height="180">
+  </div>
+
+  <ul class="stats">
+    <li><b>5+</b><span>years of industrial R&amp;D</span></li>
+    <li><b>3</b><span>U.S. patent filings, 1 granted</span></li>
+    <li><b>7</b><span>peer-reviewed journal articles</span></li>
+    <li><b>170+</b><span>citations</span></li>
+  </ul>
+
+  <!-- ===================== Expertise ===================== -->
+  <section id="expertise">
+    <h2>Expertise</h2>
+    <dl class="rows">
+      <dt>Thermal-fluids</dt>
+      <dd>Heat transfer, thermodynamics, fluid mechanics, combustion, burner design, emissions (NOx) reduction</dd>
+      <dt>Simulation</dt>
+      <dd>CFD (Ansys Fluent, OpenFOAM), chemical kinetics (Cantera), design of experiments, uncertainty analysis, statistics</dd>
+      <dt>Testing</dt>
+      <dd>Test-facility development, test procedures, PLIF, PIV, schlieren and OH chemiluminescence imaging</dd>
+      <dt>R&amp;D leadership</dt>
+      <dd>Product development, patents, project planning (PERT, MS Project), team supervision, technical communication with customers and marketing</dd>
+      <dt>Software</dt>
+      <dd>SolidWorks, CATIA, Pro/ENGINEER, Python, MATLAB, Fortran</dd>
+    </dl>
+  </section>
+
+  <!-- ===================== Projects ===================== -->
+  <section id="projects">
+    <h2>Research and projects</h2>
+    <div class="cards">
+      <article class="card">
+        <!-- To add a picture to a card: <img src="images/your-file.jpg" alt="what it shows"> -->
+        <span class="tag">Industry · 2021 to now</span>
+        <h3>Industrial burner development</h3>
+        <p>Developing burner product families at Faber Burner Company, from concept
+           through CFD simulation and combustion testing, with a focus on lower NOx
+           emissions. Three U.S. patent filings, one granted.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Ph.D. · NASA-funded</span>
+        <h3>Plasma-assisted combustion</h3>
+        <p>Using nanosecond repetitively pulsed plasma discharges to stabilize inverse
+           diffusion flames, and studying plasma-assisted ignition and discharge mode
+           transition in a constant-volume combustion chamber.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Ph.D. · Biofuels</span>
+        <h3>Laminar burning speed of biofuels</h3>
+        <p>Measuring the laminar burning speed and flame structure of anisole-air
+           mixtures, and the effect of oxygenated additives on gasoline combustion,
+           with optical diagnostics and chemical-kinetics modeling.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== Experience ===================== -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <h3>Senior Research and Development Engineer</h3><span class="when">May 2025 to now</span>
+      <h3>Burner Development/Design Engineer</h3><span class="when">May 2021 to May 2025</span>
+      <div class="where">Faber Burner Company, Lock Haven, PA</div>
+      <ul>
+        <li>Developed two burner product families, taking each from concept through CFD simulation and combustion testing.</li>
+        <li>Improved the NOx performance of the company's burners.</li>
+        <li>Ran Ansys Fluent CFD simulations and burner combustion tests to evaluate the flow, combustion and emissions performance of new designs.</li>
+        <li>Expanded the R&amp;D test facilities and improved the R&amp;D test procedures.</li>
+        <li>Co-inventor on three U.S. patent filings, including U.S. Design Patent D1,102,821.</li>
+        <li>Built burner-sizing software that engineering and marketing use to select burners for customer applications.</li>
+        <li>Developed customer support programs, updated the technical communication sheets sent to customers, and designed and launched the company's new website.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Graduate Research Assistant and Laboratory Manager</h3><span class="when">Aug 2017 to Aug 2021</span>
+      <div class="where">Mississippi State University, Mississippi State, MS</div>
+      <ul>
+        <li>Managed the Plasma and Combustion Research Laboratory and supervised seven graduate and undergraduate students.</li>
+        <li>Carried out a NASA-funded study of nanosecond pulsed plasma discharges for stabilizing inverse diffusion flames.</li>
+        <li>Used schlieren, PLIF, PIV and OH chemiluminescence imaging, paired with chemical-kinetics and CFD modeling (Cantera, Ansys Fluent).</li>
+        <li>Instructor of record for Thermodynamics II (three semesters, 130 students) and Intermediate Heat Transfer; teaching assistant for Internal Combustion Engines.</li>
+      </ul>
+    </div>
+
+    <h3 class="list">Earlier</h3>
+    <ul class="early">
+      <li><span><b>R&amp;D Researcher and Commercial Manager</b>, Avin Exon Pars Ltd., Iran</span><span class="muted">2015 to 2017</span>
+          <span class="what">Designed product accessories to customer requirements; sourced vendors and prepared sales plans.</span></li>
+      <li><span><b>Aerodynamicist</b>, Sun and Air Research Institute, Iran</span><span class="muted">2010 to 2011, 2013 to 2016</span>
+          <span class="what">Conceptual design of a two-seat ultralight aircraft, performance and flight-dynamics analysis, wind-tunnel testing.</span></li>
+      <li><span><b>Graduate Research Assistant</b>, Ferdowsi University of Mashhad, Iran</span><span class="muted">2012 to 2016</span>
+          <span class="what">Drop-impact and fluid-fluid interface experiments using planar laser-induced fluorescence (PLIF).</span></li>
+      <li><span><b>Founding Member and Engineer</b>, Hakat Gostar, Iran</span><span class="muted">2011 to 2014</span></li>
+    </ul>
+  </section>
+
+  <!-- ===================== Publications ===================== -->
+  <section id="publications">
+    <h2>Patents and publications</h2>
+
+    <h3 class="list">Patents</h3>
+    <ol class="pubs">
+      <li data-k="P"><span class="me">S. Zare</span>, T. A. Probst, J. Colannino,
+        “Diffuser plate,” U.S. Design Patent D1,102,821 S, issued November 25, 2025.
+        Assigned to Faber Burner Company.
+        <a class="link" href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/D1102821">PDF</a></li>
+      <li data-k="P">J. Colannino, <span class="me">S. Zare</span>, T. A. Probst,
+        “Combustion system with airflow eductor for pollution reduction,”
+        U.S. Patent Application No. 19/237,972, filed June 13, 2025.</li>
+      <li data-k="P">J. Colannino, <span class="me">S. Zare</span>, T. A. Probst,
+        “Combustion system with mixing and flame arresting for pollution reduction,”
+        U.S. Patent Application No. 18/512,459, published 2024.</li>
+    </ol>
+
+    <h3 class="list">Journal articles</h3>
+    <ol class="pubs">
+      <li data-k="J"><span class="me">S. Zare</span>, N. Druker, J. Lefkowitz, O. Askari,
+        “Experimental and numerical study of stabilized flame in inverse coflow turbulent jet using nanosecond repetitively pulsed discharges,”
+        <span class="venue">Combustion and Flame</span> 266 (2024) 113515.
+        <a class="link" href="https://doi.org/10.1016/j.combustflame.2024.113515">DOI</a></li>
+      <li data-k="J"><span class="me">S. Zare</span>, O. Askari,
+        “Mode transition and uncertainty analysis of repetitive nanosecond pulsed discharge,”
+        <span class="venue">Journal of Electrostatics</span> 118 (2022) 103736.
+        <a class="link" href="https://doi.org/10.1016/j.elstat.2022.103736">DOI</a></li>
+      <li data-k="J">J. Shaffer, O. Askari, <span class="me">S. Zare</span>,
+        “Electrode design for thermal and nonthermal plasma discharge inside a constant volume combustion chamber,”
+        <span class="venue">Journal of Energy Resources Technology</span> 144(8) (2022) 082306.
+        <a class="link" href="https://doi.org/10.1115/1.4053142">DOI</a></li>
+      <li data-k="J"><span class="me">S. Zare</span>, H. W. Lo, S. Roy, O. Askari,
+        “On the low-temperature plasma discharge in methane/air diffusion flames,”
+        <span class="venue">Energy</span> 197 (2020) 117185.
+        <a class="link" href="https://doi.org/10.1016/j.energy.2020.117185">DOI</a></li>
+      <li data-k="J"><span class="me">S. Zare</span>, H. W. Lo, O. Askari,
+        “Flame stability in inverse coaxial injector using repetitive nanosecond pulsed plasma,”
+        <span class="venue">Journal of Energy Resources Technology</span> 142(8) (2020) 082101.
+        <a class="link" href="https://doi.org/10.1115/1.4046227">DOI</a></li>
+      <li data-k="J"><span class="me">S. Zare</span>, S. Roy, A. El Maadi, O. Askari,
+        “An investigation on laminar burning speed and flame structure of anisole-air mixture,”
+        <span class="venue">Fuel</span> 244 (2019) 120–131.
+        <a class="link" href="https://doi.org/10.1016/j.fuel.2019.01.149">DOI</a></li>
+      <li data-k="J">S. Roy, <span class="me">S. Zare</span>, O. Askari,
+        “Understanding the effect of oxygenated additives on combustion characteristics of gasoline,”
+        <span class="venue">Journal of Energy Resources Technology</span> 141(2) (2019) 022205.
+        <a class="link" href="https://doi.org/10.1115/1.4041316">DOI</a></li>
+    </ol>
+
+    <h3 class="list">Conference papers</h3>
+    <ol class="pubs">
+      <li data-k="C">J. Shaffer, <span class="me">S. Zare</span>, O. Askari,
+        “Modeling discharge spark ignition using zero dimension thermodynamic model and experimental power measurements at various pressures,”
+        <span class="venue">ASME IMECE2021</span>, 2021.
+        <a class="link" href="https://doi.org/10.1115/IMECE2021-73235">DOI</a></li>
+      <li data-k="C">J. Shaffer, <span class="me">S. Zare</span>, O. Askari,
+        “Structure and measurement of atmospheric and high-pressure ignition plasma,”
+        <span class="venue">ASME IMECE2021</span>, 2021.
+        <a class="link" href="https://doi.org/10.1115/IMECE2021-73138">DOI</a></li>
+      <li data-k="C"><span class="me">S. Zare</span>, O. Askari,
+        “Instability study of repetitive nanosecond pulsed discharge plasma in a plasma assisted burner,”
+        <span class="venue">ASME IMECE2020</span>, 2020.
+        <a class="link" href="https://doi.org/10.1115/IMECE2020-24304">DOI</a></li>
+      <li data-k="C"><span class="me">S. Zare</span>, H. W. Lo, S. Roy, O. Askari,
+        “Flame stability in inverse coaxial injector using repetitive nanosecond pulsed plasma,”
+        <span class="venue">ASME IMECE2019</span>, Salt Lake City, UT, 2019.
+        <a class="link" href="https://doi.org/10.1115/IMECE2019-10991">DOI</a></li>
+      <li data-k="C">S. Roy, <span class="me">S. Zare</span>, O. Askari,
+        “Understanding the effect of oxygenated biofuels addition on combustion characteristics of gasoline,”
+        <span class="venue">ASME IMECE2018</span>, 2018.
+        <a class="link" href="https://doi.org/10.1115/IMECE2018-86490">DOI</a></li>
+      <li data-k="C"><span class="me">S. Zare</span>, S. Roy, L. A. Onigbanjo, O. Askari,
+        “Experimental and numerical investigation of flame kernel formation and propagation in methane/air mixtures,”
+        <span class="venue">Spring Technical Meeting, Central States Section of the Combustion Institute</span>, Minneapolis, MN, 2018.</li>
+      <li data-k="C"><span class="me">S. Zare</span>, M. Passandideh-Fard,
+        “Experimental study of water drop penetration on water surface using planar laser induced fluorescence,”
+        <span class="venue">24th Annual International Conference on Mechanical Engineering (ISME2016)</span>, Yazd, Iran, 2016.</li>
+      <li data-k="C"><span class="me">S. Zare</span>, M. Passandideh-Fard,
+        “Experimental study of water drop penetration following drop impact on water surface using planar laser induced fluorescence,”
+        <span class="venue">16th Conference on Fluid Dynamics (FD2015)</span>, Iran, 2015.</li>
+    </ol>
+
+    <h3 class="list">Conference presentations</h3>
+    <ol class="pubs">
+      <li data-k="T">“Experimental study of repetitive nanosecond pulsed discharge on inverse diffusion flame,”
+        <span class="venue">Spring Technical Meeting, Central States Section of the Combustion Institute</span>, 2020.</li>
+      <li data-k="T">“Understanding the effect of nanosecond pulsed discharge on ignition and flame stability of methane jet flames,”
+        <span class="venue">11th U.S. National Combustion Meeting</span>, Pasadena, CA, 2019.</li>
+      <li data-k="T">“On the laminar burning speed and spherical flame structure of anisole-air premixed mixture,”
+        <span class="venue">11th U.S. National Combustion Meeting</span>, Pasadena, CA, 2019.</li>
+      <li data-k="T">“Effect of capacitive discharge ignition on plasma combustion of propane-air mixture,”
+        <span class="venue">11th U.S. National Combustion Meeting</span>, Pasadena, CA, 2019.</li>
+      <li data-k="T">“Development of a new chemical mechanism for ethanol-air mixture in a wide range of temperature and pressure,”
+        <span class="venue">11th U.S. National Combustion Meeting</span>, Pasadena, CA, 2019.</li>
+      <li data-k="T">“Experimental study on laminar burning speed for anisole/air mixture,”
+        <span class="venue">Spring Technical Meeting, Central States Section of the Combustion Institute</span>, Minneapolis, MN, 2018.
+        <a class="link" href="https://arxiv.org/abs/1806.05032">arXiv</a></li>
+    </ol>
+  </section>
+
+  <!-- ===================== Education, honors ===================== -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="job">
+      <h3>Ph.D., Mechanical Engineering</h3><span class="when">2021</span>
+      <div class="where">Mississippi State University · GPA 4.0/4.0 · Dissertation: <i>Experimental Study of Laminar Burning Speed and Plasma-Stabilized Flame</i></div>
+    </div>
+    <div class="job">
+      <h3>M.Sc., Mechanical Engineering (Energy Conversion)</h3><span class="when">2016</span>
+      <div class="where">Ferdowsi University of Mashhad, Iran · Thesis: <i>Experimental Study of Drop Impact and Penetration into a Water Surface Using PLIF</i></div>
+    </div>
+    <div class="job">
+      <h3>B.Sc., Mechanical Engineering (Thermo-Fluids)</h3><span class="when">2012</span>
+      <div class="where">Ferdowsi University of Mashhad, Iran · Thesis: <i>Aerodynamic Study of Bird Flight Applied to the Cinereous Vulture</i></div>
+    </div>
+  </section>
+
+  <section id="honors" data-nav="education">
+    <div class="two">
+      <div>
+        <h2>Honors and awards</h2>
+        <ul class="plain">
+          <li><span>Preparing the Future Professoriate Award, Mississippi State University ($21,600; one of two Ph.D. candidates selected)</span><span class="muted">2019</span></li>
+          <li><span>Award for Technical Merit, 11th U.S. National Combustion Meeting</span><span class="muted">2019</span></li>
+          <li><span>Award for Artistic Merit, Central States Section of the Combustion Institute</span><span class="muted">2018</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Certifications</h2>
+        <ul class="plain">
+          <li><span>Google AI Essentials, Google</span><span class="muted">2025</span></li>
+          <li><span>Introduction to Statistics, Stanford University</span><span class="muted">2025</span></li>
+          <li><span>Python Data Structures, University of Michigan</span><span class="muted">2024</span></li>
+          <li><span>Programming for Everybody, University of Michigan</span><span class="muted">2024</span></li>
+          <li><span>Applied Computational Fluid Dynamics, Siemens</span><span class="muted">2023</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>The quickest way to reach me is email.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:saeidzare.me@gmail.com">saeidzare.me@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/saeidzare89">LinkedIn</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=WyWVX4AAAAAJ">Google Scholar</a>
+        <a class="btn" href="Saeid_Zare_CV.pdf">CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Saeid Zare · Last updated October 2026</div>
+</footer>
+
+<script>
+  // Highlights the menu link of the section on screen, in both scroll directions.
+  (function () {
+    const header = document.querySelector('header.site');
+    const links = [...document.querySelectorAll('.nav ul a')];
+    const bar = document.querySelector('.nav .indicator');
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const root = document.documentElement;
+
+    function update() {
+      const h = header.offsetHeight;
+      // A menu jump lands a section's heading just below the header.
+      root.style.scrollPaddingTop = (h - 24) + 'px';
+
+      let current = null;
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= h + 40) current = s;
+      }
+      // The last sections are short and can never reach the top: at the very
+      // bottom of the page, the last one is the one being read.
+      if (window.innerHeight + window.scrollY >= root.scrollHeight - 2) {
+        current = sections[sections.length - 1];
+      }
+      const id = current ? (current.dataset.nav || current.id) : null;
+
+      let active = null;
+      for (const a of links) {
+        const on = a.hash === '#' + id;
+        a.classList.toggle('active', on);
+        if (on) { a.setAttribute('aria-current', 'location'); active = a; }
+        else a.removeAttribute('aria-current');
+      }
+      if (active) {
+        bar.style.width = active.offsetWidth + 'px';
+        bar.style.transform = 'translate(' + active.offsetLeft + 'px,' +
+          (active.offsetTop + active.offsetHeight + 3) + 'px)';
+        bar.style.opacity = '1';
+      } else {
+        bar.style.opacity = '0';
+      }
+    }
+
+    // Browsers already deliver scroll events at most once per frame, and the
+    // work here is a handful of measurements, so it runs directly.
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  })();
+</script>
+</body>
+</html>
