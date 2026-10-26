@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Laminar burning speed is the benchmark that chemical-kinetic models of a fuel are tested against. I measured it for anisole, a promising second-generation biofuel for which little data existed.">
+<link rel="canonical" href="https://saeidzare89.github.io/biofuels.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laminar burning speed of biofuels | Saeid Zare, Ph.D.">
+<meta property="og:description" content="Laminar burning speed is the benchmark that chemical-kinetic models of a fuel are tested against. I measured it for anisole, a promising second-generation biofuel for which little data existed.">
+<meta property="og:url" content="https://saeidzare89.github.io/biofuels.html">
+<meta property="og:image" content="https://saeidzare89.github.io/photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239b2c2c'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESZ%3C/text%3E%3C/svg%3E">
+<title>Laminar burning speed of biofuels | Saeid Zare, Ph.D.</title>
+<script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+
+<style>
+
+:root { --bg:#f6f5f3; --card:#fff; --text:#16181c; --muted:#5b616a; --line:#e6e2dc; --link:#b4461a;
+  --accent:#e2632b; --accent2:#f2a65a; --shadow:0 10px 30px rgba(20,16,12,.08);
+  --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,130,70,.30), transparent 45%), linear-gradient(160deg, #fffaf5 0%, #f3e7dc 100%);
+  --hero-text:#1b1511; --hero-muted:#5b4c40; --hero-role:#b4461a;
+  --bar-bg: rgba(250,248,245,.88); --bar-text:#16181c; --bar-muted:#5b616a; --bar-line:#e6e2dc; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0f1012; --card:#18191c; --text:#ecebe8; --muted:#a3a8af;
+  --line:#2a2c30; --link:#f59a6a; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,120,60,.4), transparent 45%), linear-gradient(160deg, #111318 0%, #1d1510 100%);
+  --hero-text:#fff; --hero-muted:#ddd6cf; --hero-role:#f2a65a;
+  --bar-bg: rgba(14,15,18,.82); --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; } }
+:root[data-theme="dark"] { --bg:#0f1012; --card:#18191c; --text:#ecebe8; --muted:#a3a8af;
+  --line:#2a2c30; --link:#f59a6a; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,120,60,.4), transparent 45%), linear-gradient(160deg, #111318 0%, #1d1510 100%);
+  --hero-text:#fff; --hero-muted:#ddd6cf; --hero-role:#f2a65a;
+  --bar-bg: rgba(14,15,18,.82); --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+a { color: var(--link); text-decoration: none; } a:hover { text-decoration: underline; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+header.bar { position: sticky; top: 0; z-index: 10; background: var(--bar-bg); border-bottom: 1px solid var(--bar-line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+header.bar .wrap { display: flex; align-items: center; gap: 20px; min-height: 60px; }
+header.bar .brand { color: var(--bar-text); font-weight: 800; margin-right: auto; }
+header.bar .back { color: var(--bar-muted); font-weight: 600; font-size: 15px; }
+header.bar .back:hover { color: var(--bar-text); text-decoration: none; }
+header.bar .theme-toggle { color: var(--bar-text); }
+.phero { color: var(--hero-text); padding: 64px 0 60px; background: var(--hero-bg); }
+.phero .tag { color: var(--hero-role); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+.phero h1 { font-size: 46px; line-height: 1.08; font-weight: 800; margin: 10px 0 14px; letter-spacing: -0.02em; }
+.phero p { color: var(--hero-muted); font-size: 19px; max-width: 42em; margin: 0; }
+.step { padding-top: 52px; }
+.step .num { color: var(--link); font-weight: 800; font-size: 13px; letter-spacing: .12em; }
+.step h2 { font-size: 28px; font-weight: 800; margin: 4px 0 10px; letter-spacing: -0.01em; }
+.step p { max-width: 46em; margin: 0 0 22px; font-size: 17.5px; }
+.pfigs { display: grid; gap: 20px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); align-items: start; }
+.pfigs.one { grid-template-columns: minmax(0, 640px); }
+.pfig { margin: 0; }
+.pfig.wide { grid-column: 1 / -1; }
+.pfig .shot { display: block; width: 100%; padding: 0; margin: 0; border: 0; border-radius: 12px; overflow: hidden; background: #0b0b0c; cursor: zoom-in; box-shadow: var(--shadow); }
+.pfig.graph .shot, .pfig.drawing .shot { background: #fff; }
+.pfig img { display: block; width: 100%; height: auto; transition: opacity .2s; }
+.pfig .shot:hover img { opacity: .9; }
+.pfig figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.related { padding-top: 60px; }
+.related h2 { font-size: 28px; font-weight: 800; margin: 4px 0 16px; }
+.pub { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: start; background: var(--card); border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow); margin-bottom: 10px; }
+.pub .y { font-weight: 800; color: var(--link); }
+.pub .ti { font-weight: 700; display: block; }
+.pub .au, .pub .ve { font-size: 14.5px; color: var(--muted); display: block; }
+.pub a.go { align-self: center; font-size: 13.5px; font-weight: 800; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); white-space: nowrap; }
+.me { color: var(--text); font-weight: 800; }
+.pnav { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-weight: 700; }
+.pnav span { display: block; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+footer { color: var(--muted); font-size: 14px; padding: 32px 0 90px; }
+@media (max-width: 860px) {
+  .wrap { padding: 0 16px; }
+  .phero { padding: 40px 0 36px; } .phero h1 { font-size: 34px; }
+  .pfigs, .pfigs.one { grid-template-columns: 1fr; }
+  .pub { grid-template-columns: 1fr; gap: 4px; }
+  .pnav { flex-direction: column; }
+}
+
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; overflow: visible; }
+dialog.lb::backdrop { background: rgba(10, 10, 10, .92); }
+.lb figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.lb img { display: block; max-width: min(1400px, 88vw); max-height: 78vh; object-fit: contain; background: #0b0b0c; }
+.lb img.graph { background: #fff; }
+.lb figcaption { color: #eee; font-size: 15.5px; text-align: center; max-width: 70ch; padding: 0 16px; }
+.lb figcaption span { color: #9a9aa0; margin-left: 8px; }
+.lb button { position: fixed; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+.lb button:hover { background: rgba(255,255,255,.12); }
+.lb .prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lb .next { right: 16px; top: 50%; transform: translateY(-50%); }
+.lb .close { right: 16px; top: 16px; }
+@media (max-width: 860px) { .lb img { max-width: 100vw; } .lb .prev, .lb .next { top: auto; bottom: 16px; transform: none; } }
+
+.theme-toggle { font: inherit; font-size: 16px; line-height: 1; width: 36px; height: 36px; flex: none; border-radius: 50%;
+  border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; opacity: .75; transition: opacity .2s; }
+.theme-toggle:hover, .theme-toggle:focus-visible { opacity: 1; }
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap"><a class="brand" href="index.html">Saeid Zare</a><a class="back" href="index.html#projects">← All projects</a><button class="theme-toggle" type="button" aria-label="Switch light or dark">☾</button></div></header>
+<div class="phero"><div class="wrap"><div class="tag">Ph.D. · Mississippi State University</div><h1>Laminar burning speed of biofuels</h1><p>Laminar burning speed is the benchmark that chemical-kinetic models of a fuel are tested against. I measured it for anisole, a promising second-generation biofuel for which little data existed.</p></div></div>
+<main class="wrap">
+  <section class="step"><div class="num">01</div><h2>Why anisole</h2><p>Anisole is an oxygenated biofuel derived from lignin, with a high flame speed and high knock resistance, but few measurements existed at the temperatures and pressures that matter in engines.</p></section><section class="step"><div class="num">02</div><h2>How it was measured</h2><p>Spherical flames were ignited at the center of a constant-volume combustion chamber and filmed with a z-type schlieren system. A multi-shell thermodynamic model turned the measured pressure rise into burning speed, from 0.5 to 5.5 atm, 460 to 550 K, and equivalence ratios of 0.8 to 1.4.</p><div class="pfigs" style="--n:1"><figure class="pfig drawing"><button class="shot" type="button" data-caption="The constant-volume combustion chamber and z-type schlieren system. Dissertation Fig. 2.2." aria-label="Enlarge: The chamber and schlieren system."><img src="media/diss-cvcc-setup.jpg" alt="The chamber and schlieren system." width="1295" height="852" loading="lazy"></button><figcaption>The constant-volume combustion chamber and z-type schlieren system. Dissertation Fig. 2.2.</figcaption></figure><figure class="pfig wide figure"><button class="shot" type="button" data-caption="A spherically expanding flame in the constant-volume combustion chamber, from ignition to a cellular flame front." aria-label="Enlarge: A spherical flame growing from ignition to a cellular front."><img src="media/flame-growth.jpg" alt="A spherical flame growing from ignition to a cellular front." width="2400" height="400" loading="lazy"></button><figcaption>A spherically expanding flame in the constant-volume combustion chamber, from ignition to a cellular flame front.</figcaption></figure></div></section><section class="step"><div class="num">03</div><h2>Flame structure</h2><p>As the flame grows, cells form on its surface. The work showed hydrodynamic instability to be the main cause, and tracked how pressure and equivalence ratio change when the flame front turns cellular.</p><div class="pfigs" style="--n:2"><figure class="pfig figure"><button class="shot" type="button" data-caption="Schlieren images of anisole-air flames (equivalence ratio 1.2) at initial pressures of 0.5 to 3 atm, showing cell formation. Dissertation Fig. 2.5." aria-label="Enlarge: Cell formation at 0.5 to 3 atm."><img src="media/diss-schlieren-cells.jpg" alt="Cell formation at 0.5 to 3 atm." width="887" height="837" loading="lazy"></button><figcaption>Schlieren images of anisole-air flames (equivalence ratio 1.2) at initial pressures of 0.5 to 3 atm, showing cell formation. Dissertation Fig. 2.5.</figcaption></figure><figure class="pfig figure"><button class="shot" type="button" data-caption="Anisolography: flame radius and cell formation of an anisole/air flame in a constant-volume combustion chamber (2 atm, equivalence ratio 1, 453 K). With O. Askari. Award for Artistic Merit, Central States Section of the Combustion Institute, 2018." aria-label="Enlarge: Anisolography. Award for Artistic Merit, 2018."><img src="media/anisolography.jpg" alt="Anisolography. Award for Artistic Merit, 2018." width="1320" height="1800" loading="lazy"></button><figcaption>Anisolography: flame radius and cell formation of an anisole/air flame in a constant-volume combustion chamber (2 atm, equivalence ratio 1, 453 K). With O. Askari. Award for Artistic Merit, Central States Section of the Combustion Institute, 2018.</figcaption></figure></div></section><section class="step"><div class="num">04</div><h2>Results</h2><p>Anisole burns relatively fast, peaking at an equivalence ratio of 1.1; its burning speed rises with temperature and falls with pressure. A power-law correlation gives the speed across the whole range, and comparison with the two available kinetic mechanisms showed they need revision, guided by a sensitivity analysis.</p><div class="pfigs one" style="--n:1"><figure class="pfig graph"><button class="shot" type="button" data-caption="Laminar burning speed of anisole-air against temperature for equivalence ratios 0.8 to 1.4 (453 K, 1 atm initial). Dissertation Fig. 2.12." aria-label="Enlarge: Burning speed against temperature."><img src="media/diss-lbs-temperature.png" alt="Burning speed against temperature." width="854" height="567" loading="lazy"></button><figcaption>Laminar burning speed of anisole-air against temperature for equivalence ratios 0.8 to 1.4 (453 K, 1 atm initial). Dissertation Fig. 2.12.</figcaption></figure></div></section><section class="step"><div class="num">05</div><h2>Related work</h2><p>As a co-author in the same lab: how ethanol and 2,5-dimethylfuran change the burning speed and ignition delay of iso-octane, and the ignition side of the chamber, from spark-plasma energy measurements to a new electrode design.</p></section>
+  <section class="related"><div class="num" style="color:var(--link);font-weight:800;font-size:13px;letter-spacing:.12em">PAPERS</div><h2>Publications from this work</h2><article class="pub"><span class="y">2019</span><div><span class="ti">An investigation on laminar burning speed and flame structure of anisole-air mixture</span><span class="au"><b class="me">S. Zare</b>, S. Roy, A. El Maadi, O. Askari</span><span class="ve"><i>Fuel</i>, 244 (2019) 120–131</span></div><a class="go" href="https://doi.org/10.1016/j.fuel.2019.01.149">DOI ↗</a></article><article class="pub"><span class="y">2019</span><div><span class="ti">Understanding the effect of oxygenated additives on combustion characteristics of gasoline</span><span class="au">S. Roy, <b class="me">S. Zare</b>, O. Askari</span><span class="ve"><i>Journal of Energy Resources Technology</i>, 141(2) (2019) 022205</span></div><a class="go" href="https://doi.org/10.1115/1.4041316">DOI ↗</a></article><article class="pub"><span class="y">2022</span><div><span class="ti">Electrode design for thermal and nonthermal plasma discharge inside a constant volume combustion chamber</span><span class="au">J. Shaffer, O. Askari, <b class="me">S. Zare</b></span><span class="ve"><i>Journal of Energy Resources Technology</i>, 144(8) (2022) 082306</span></div><a class="go" href="https://doi.org/10.1115/1.4053142">DOI ↗</a></article><article class="pub"><span class="y">2021</span><div><span class="ti">Modeling discharge spark ignition using zero dimension thermodynamic model and experimental power measurements at various pressures</span><span class="au">J. Shaffer, <b class="me">S. Zare</b>, O. Askari</span><span class="ve"><i>ASME IMECE2021</i>, 2021</span></div><a class="go" href="https://doi.org/10.1115/IMECE2021-73235">DOI ↗</a></article><article class="pub"><span class="y">2021</span><div><span class="ti">Structure and measurement of atmospheric and high-pressure ignition plasma</span><span class="au">J. Shaffer, <b class="me">S. Zare</b>, O. Askari</span><span class="ve"><i>ASME IMECE2021</i>, 2021</span></div><a class="go" href="https://doi.org/10.1115/IMECE2021-73138">DOI ↗</a></article><article class="pub"><span class="y">2018</span><div><span class="ti">Understanding the effect of oxygenated biofuels addition on combustion characteristics of gasoline</span><span class="au">S. Roy, <b class="me">S. Zare</b>, O. Askari</span><span class="ve"><i>ASME IMECE2018</i>, 2018</span></div><a class="go" href="https://doi.org/10.1115/IMECE2018-86490">DOI ↗</a></article><article class="pub"><span class="y">2018</span><div><span class="ti">Experimental and numerical investigation of flame kernel formation and propagation in methane/air mixtures</span><span class="au"><b class="me">S. Zare</b>, S. Roy, L. A. Onigbanjo, O. Askari</span><span class="ve"><i>Spring Technical Meeting, Central States Section of the Combustion Institute</i>, Minneapolis, MN, 2018</span></div><span></span></article><article class="pub"><span class="y">2019</span><div><span class="ti">On the laminar burning speed and spherical flame structure of anisole-air premixed mixture</span><span class="ve"><i>11th U.S. National Combustion Meeting</i>, Pasadena, CA, 2019</span></div><span></span></article><article class="pub"><span class="y">2019</span><div><span class="ti">Effect of capacitive discharge ignition on plasma combustion of propane-air mixture</span><span class="ve"><i>11th U.S. National Combustion Meeting</i>, Pasadena, CA, 2019</span></div><span></span></article><article class="pub"><span class="y">2019</span><div><span class="ti">Development of a new chemical mechanism for ethanol-air mixture in a wide range of temperature and pressure</span><span class="ve"><i>11th U.S. National Combustion Meeting</i>, Pasadena, CA, 2019</span></div><span></span></article><article class="pub"><span class="y">2018</span><div><span class="ti">Experimental study on laminar burning speed for anisole/air mixture</span><span class="ve"><i>Spring Technical Meeting, Central States Section of the Combustion Institute</i>, Minneapolis, MN, 2018</span></div><a class="go" href="https://arxiv.org/abs/1806.05032">arXiv ↗</a></article></section>
+  <nav class="pnav"><a href="plasma.html"><span>Previous project</span>← Plasma-assisted combustion</a><a href="burners.html" style="text-align:right"><span>Next project</span>Industrial burner development →</a></nav>
+</main>
+<footer><div class="wrap">© 2026 Saeid Zare</div></footer>
+<dialog class="lb" aria-label="Enlarged image">
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="prev" type="button" aria-label="Previous image">‹</button>
+  <button class="next" type="button" aria-label="Next image">›</button>
+  <button class="close" type="button" aria-label="Close">×</button>
+</dialog>
+<script>
+(function () {
+  const root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : mq.matches;
+  const buttons = [...document.querySelectorAll('.theme-toggle')];
+  function paint() {
+    const d = isDark();
+    for (const b of buttons) {
+      b.textContent = d ? '☀' : '☾';
+      b.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode');
+      b.title = b.getAttribute('aria-label');
+    }
+  }
+  for (const b of buttons) b.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    paint();
+  });
+  if (mq.addEventListener) mq.addEventListener('change', paint);
+  paint();
+})();
+</script>
+<script>
+(function () {
+  const shots = [...document.querySelectorAll('.pfig .shot')];
+  const lb = document.querySelector('dialog.lb');
+  if (!shots.length || !lb) return;
+  const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+  let i = 0;
+  function show(n) {
+    i = (n + shots.length) % shots.length;
+    const s = shots[i], thumb = s.querySelector('img');
+    img.src = thumb.getAttribute('src');
+    img.alt = thumb.alt;
+    const fig = s.closest('figure').classList;
+    img.className = fig.contains('graph') || fig.contains('drawing') ? 'graph' : '';
+    cap.textContent = s.dataset.caption;
+    const count = document.createElement('span');
+    count.textContent = (i + 1) + ' / ' + shots.length;
+    cap.append(count);
+  }
+  shots.forEach((s, n) => s.addEventListener('click', () => { show(n); lb.showModal(); }));
+  lb.querySelector('.prev').addEventListener('click', () => show(i - 1));
+  lb.querySelector('.next').addEventListener('click', () => show(i + 1));
+  lb.querySelector('.close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', (e) => { if (e.target === lb || e.target.tagName === 'FIGURE') lb.close(); });
+  lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+})();
+</script>
+</body>
+</html>

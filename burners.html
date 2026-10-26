@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="At Faber Burner Company I develop industrial burners, from concept through CFD simulation and combustion testing, with a focus on lower NOx emissions.">
+<link rel="canonical" href="https://saeidzare89.github.io/burners.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Industrial burner development | Saeid Zare, Ph.D.">
+<meta property="og:description" content="At Faber Burner Company I develop industrial burners, from concept through CFD simulation and combustion testing, with a focus on lower NOx emissions.">
+<meta property="og:url" content="https://saeidzare89.github.io/burners.html">
+<meta property="og:image" content="https://saeidzare89.github.io/photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239b2c2c'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESZ%3C/text%3E%3C/svg%3E">
+<title>Industrial burner development | Saeid Zare, Ph.D.</title>
+<script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+
+<style>
+
+:root { --bg:#f6f5f3; --card:#fff; --text:#16181c; --muted:#5b616a; --line:#e6e2dc; --link:#b4461a;
+  --accent:#e2632b; --accent2:#f2a65a; --shadow:0 10px 30px rgba(20,16,12,.08);
+  --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,130,70,.30), transparent 45%), linear-gradient(160deg, #fffaf5 0%, #f3e7dc 100%);
+  --hero-text:#1b1511; --hero-muted:#5b4c40; --hero-role:#b4461a;
+  --bar-bg: rgba(250,248,245,.88); --bar-text:#16181c; --bar-muted:#5b616a; --bar-line:#e6e2dc; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0f1012; --card:#18191c; --text:#ecebe8; --muted:#a3a8af;
+  --line:#2a2c30; --link:#f59a6a; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,120,60,.4), transparent 45%), linear-gradient(160deg, #111318 0%, #1d1510 100%);
+  --hero-text:#fff; --hero-muted:#ddd6cf; --hero-role:#f2a65a;
+  --bar-bg: rgba(14,15,18,.82); --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; } }
+:root[data-theme="dark"] { --bg:#0f1012; --card:#18191c; --text:#ecebe8; --muted:#a3a8af;
+  --line:#2a2c30; --link:#f59a6a; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,120,60,.4), transparent 45%), linear-gradient(160deg, #111318 0%, #1d1510 100%);
+  --hero-text:#fff; --hero-muted:#ddd6cf; --hero-role:#f2a65a;
+  --bar-bg: rgba(14,15,18,.82); --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+a { color: var(--link); text-decoration: none; } a:hover { text-decoration: underline; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+header.bar { position: sticky; top: 0; z-index: 10; background: var(--bar-bg); border-bottom: 1px solid var(--bar-line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+header.bar .wrap { display: flex; align-items: center; gap: 20px; min-height: 60px; }
+header.bar .brand { color: var(--bar-text); font-weight: 800; margin-right: auto; }
+header.bar .back { color: var(--bar-muted); font-weight: 600; font-size: 15px; }
+header.bar .back:hover { color: var(--bar-text); text-decoration: none; }
+header.bar .theme-toggle { color: var(--bar-text); }
+.phero { color: var(--hero-text); padding: 64px 0 60px; background: var(--hero-bg); }
+.phero .tag { color: var(--hero-role); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+.phero h1 { font-size: 46px; line-height: 1.08; font-weight: 800; margin: 10px 0 14px; letter-spacing: -0.02em; }
+.phero p { color: var(--hero-muted); font-size: 19px; max-width: 42em; margin: 0; }
+.step { padding-top: 52px; }
+.step .num { color: var(--link); font-weight: 800; font-size: 13px; letter-spacing: .12em; }
+.step h2 { font-size: 28px; font-weight: 800; margin: 4px 0 10px; letter-spacing: -0.01em; }
+.step p { max-width: 46em; margin: 0 0 22px; font-size: 17.5px; }
+.pfigs { display: grid; gap: 20px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); align-items: start; }
+.pfigs.one { grid-template-columns: minmax(0, 640px); }
+.pfig { margin: 0; }
+.pfig.wide { grid-column: 1 / -1; }
+.pfig .shot { display: block; width: 100%; padding: 0; margin: 0; border: 0; border-radius: 12px; overflow: hidden; background: #0b0b0c; cursor: zoom-in; box-shadow: var(--shadow); }
+.pfig.graph .shot, .pfig.drawing .shot { background: #fff; }
+.pfig img { display: block; width: 100%; height: auto; transition: opacity .2s; }
+.pfig .shot:hover img { opacity: .9; }
+.pfig figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.related { padding-top: 60px; }
+.related h2 { font-size: 28px; font-weight: 800; margin: 4px 0 16px; }
+.pub { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: start; background: var(--card); border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow); margin-bottom: 10px; }
+.pub .y { font-weight: 800; color: var(--link); }
+.pub .ti { font-weight: 700; display: block; }
+.pub .au, .pub .ve { font-size: 14.5px; color: var(--muted); display: block; }
+.pub a.go { align-self: center; font-size: 13.5px; font-weight: 800; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); white-space: nowrap; }
+.me { color: var(--text); font-weight: 800; }
+.pnav { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-weight: 700; }
+.pnav span { display: block; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+footer { color: var(--muted); font-size: 14px; padding: 32px 0 90px; }
+@media (max-width: 860px) {
+  .wrap { padding: 0 16px; }
+  .phero { padding: 40px 0 36px; } .phero h1 { font-size: 34px; }
+  .pfigs, .pfigs.one { grid-template-columns: 1fr; }
+  .pub { grid-template-columns: 1fr; gap: 4px; }
+  .pnav { flex-direction: column; }
+}
+
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; overflow: visible; }
+dialog.lb::backdrop { background: rgba(10, 10, 10, .92); }
+.lb figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.lb img { display: block; max-width: min(1400px, 88vw); max-height: 78vh; object-fit: contain; background: #0b0b0c; }
+.lb img.graph { background: #fff; }
+.lb figcaption { color: #eee; font-size: 15.5px; text-align: center; max-width: 70ch; padding: 0 16px; }
+.lb figcaption span { color: #9a9aa0; margin-left: 8px; }
+.lb button { position: fixed; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+.lb button:hover { background: rgba(255,255,255,.12); }
+.lb .prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lb .next { right: 16px; top: 50%; transform: translateY(-50%); }
+.lb .close { right: 16px; top: 16px; }
+@media (max-width: 860px) { .lb img { max-width: 100vw; } .lb .prev, .lb .next { top: auto; bottom: 16px; transform: none; } }
+
+.theme-toggle { font: inherit; font-size: 16px; line-height: 1; width: 36px; height: 36px; flex: none; border-radius: 50%;
+  border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; opacity: .75; transition: opacity .2s; }
+.theme-toggle:hover, .theme-toggle:focus-visible { opacity: 1; }
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap"><a class="brand" href="index.html">Saeid Zare</a><a class="back" href="index.html#projects">← All projects</a><button class="theme-toggle" type="button" aria-label="Switch light or dark">☾</button></div></header>
+<div class="phero"><div class="wrap"><div class="tag">Industry · Faber Burner Company · 2021 to now</div><h1>Industrial burner development</h1><p>At Faber Burner Company I develop industrial burners, from concept through CFD simulation and combustion testing, with a focus on lower NOx emissions.</p></div></div>
+<main class="wrap">
+  <section class="step"><div class="num">01</div><h2>Product development</h2><p>Developed two burner product families, taking each from concept through Ansys Fluent CFD simulation and combustion testing, and improved the NOx performance of the company's burners. Expanded the R&amp;D test facilities, improved the test procedures, and built burner-sizing software that engineering and marketing use to select burners for customer applications.</p><div class="pfigs one" style="--n:1"><figure class="pfig photo"><button class="shot" type="button" data-caption="Nameplate of a Faber APT-10C burner (5.5 MMBtu/hr) carrying U.S. Design Patent D1,102,821. Photo: Faber Burner Company." aria-label="Enlarge: U.S. Design Patent D1,102,821 on a Faber APT-10C burner."><img src="media/faber-nameplate.jpg" alt="U.S. Design Patent D1,102,821 on a Faber APT-10C burner." width="1235" height="926" loading="lazy"></button><figcaption>Nameplate of a Faber APT-10C burner (5.5 MMBtu/hr) carrying U.S. Design Patent D1,102,821. Photo: Faber Burner Company.</figcaption></figure></div></section><section class="step"><div class="num">02</div><h2>Patented designs</h2><p>Three U.S. patent filings with Faber. One premixes fuel and air through packing that acts as both mixer and flame arrestor, for lower pollution (US 2024/0167679 A1). A second covers a combustion system with an airflow eductor (application 19/237,972, filed 2025). The third, a diffuser plate, was granted as U.S. Design Patent D1,102,821 in November 2025.</p><div class="pfigs" style="--n:3"><figure class="pfig drawing"><button class="shot" type="button" data-caption="A combustion system with a mixer and flame arrestor. FIG. 4, U.S. Patent Application Publication 2024/0167679 A1." aria-label="Enlarge: Mixer and flame arrestor. FIG. 4, US 2024/0167679 A1."><img src="media/patent-schematic.png" alt="Mixer and flame arrestor. FIG. 4, US 2024/0167679 A1." width="1600" height="995" loading="lazy"></button><figcaption>A combustion system with a mixer and flame arrestor. FIG. 4, U.S. Patent Application Publication 2024/0167679 A1.</figcaption></figure><figure class="pfig drawing"><button class="shot" type="button" data-caption="Isometric view of the burner and blower. FIG. 5, U.S. Patent Application Publication 2024/0167679 A1." aria-label="Enlarge: Burner and blower. FIG. 5, US 2024/0167679 A1."><img src="media/patent-burner.png" alt="Burner and blower. FIG. 5, US 2024/0167679 A1." width="1070" height="1600" loading="lazy"></button><figcaption>Isometric view of the burner and blower. FIG. 5, U.S. Patent Application Publication 2024/0167679 A1.</figcaption></figure><figure class="pfig drawing"><button class="shot" type="button" data-caption="The diffuser plate. FIG. 1, U.S. Design Patent D1,102,821." aria-label="Enlarge: Diffuser plate. FIG. 1, US D1,102,821."><img src="media/patent-diffuser.png" alt="Diffuser plate. FIG. 1, US D1,102,821." width="1600" height="1051" loading="lazy"></button><figcaption>The diffuser plate. FIG. 1, U.S. Design Patent D1,102,821.</figcaption></figure></div></section>
+  <section class="related"><div class="num" style="color:var(--link);font-weight:800;font-size:13px;letter-spacing:.12em">PAPERS</div><h2>Publications from this work</h2><article class="pub"><span class="y">2025</span><div><span class="ti">Diffuser plate</span><span class="au"><b class="me">S. Zare</b>, T. A. Probst, J. Colannino</span><span class="ve"><i>U.S. Design Patent D1,102,821 S</i>, issued November 25, 2025; assigned to Faber Burner Company</span></div><a class="go" href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/D1102821">PDF ↗</a></article><article class="pub"><span class="y">2025</span><div><span class="ti">Combustion system with airflow eductor for pollution reduction</span><span class="au">J. Colannino, <b class="me">S. Zare</b>, T. A. Probst</span><span class="ve"><i>U.S. Patent Application No. 19/237,972</i>, filed June 13, 2025</span></div><span></span></article><article class="pub"><span class="y">2024</span><div><span class="ti">Combustion system with mixing and flame arresting for pollution reduction</span><span class="au">J. Colannino, <b class="me">S. Zare</b>, T. A. Probst</span><span class="ve"><i>U.S. Patent Application Publication 2024/0167679 A1</i>, published May 23, 2024 (Appl. No. 18/512,459); assigned to Faber Burner Company</span></div><a class="go" href="https://patents.google.com/patent/US20240167679A1/en">Google Patents ↗</a></article></section>
+  <nav class="pnav"><a href="biofuels.html"><span>Previous project</span>← Laminar burning speed of biofuels</a><a href="plasma.html" style="text-align:right"><span>Next project</span>Plasma-assisted combustion →</a></nav>
+</main>
+<footer><div class="wrap">© 2026 Saeid Zare</div></footer>
+<dialog class="lb" aria-label="Enlarged image">
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="prev" type="button" aria-label="Previous image">‹</button>
+  <button class="next" type="button" aria-label="Next image">›</button>
+  <button class="close" type="button" aria-label="Close">×</button>
+</dialog>
+<script>
+(function () {
+  const root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : mq.matches;
+  const buttons = [...document.querySelectorAll('.theme-toggle')];
+  function paint() {
+    const d = isDark();
+    for (const b of buttons) {
+      b.textContent = d ? '☀' : '☾';
+      b.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode');
+      b.title = b.getAttribute('aria-label');
+    }
+  }
+  for (const b of buttons) b.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    paint();
+  });
+  if (mq.addEventListener) mq.addEventListener('change', paint);
+  paint();
+})();
+</script>
+<script>
+(function () {
+  const shots = [...document.querySelectorAll('.pfig .shot')];
+  const lb = document.querySelector('dialog.lb');
+  if (!shots.length || !lb) return;
+  const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+  let i = 0;
+  function show(n) {
+    i = (n + shots.length) % shots.length;
+    const s = shots[i], thumb = s.querySelector('img');
+    img.src = thumb.getAttribute('src');
+    img.alt = thumb.alt;
+    const fig = s.closest('figure').classList;
+    img.className = fig.contains('graph') || fig.contains('drawing') ? 'graph' : '';
+    cap.textContent = s.dataset.caption;
+    const count = document.createElement('span');
+    count.textContent = (i + 1) + ' / ' + shots.length;
+    cap.append(count);
+  }
+  shots.forEach((s, n) => s.addEventListener('click', () => { show(n); lb.showModal(); }));
+  lb.querySelector('.prev').addEventListener('click', () => show(i - 1));
+  lb.querySelector('.next').addEventListener('click', () => show(i + 1));
+  lb.querySelector('.close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', (e) => { if (e.target === lb || e.target.tagName === 'FIGURE') lb.close(); });
+  lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+})();
+</script>
+</body>
+</html>
