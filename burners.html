@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e0f12">
 <meta name="description" content="At Faber Burner Company I develop industrial burners, from concept through CFD simulation and combustion testing, with a focus on lower NOx emissions.">
 <link rel="canonical" href="https://saeidzare89.github.io/burners.html">
 <meta property="og:type" content="article">
@@ -20,17 +21,17 @@
   --accent:#e2632b; --accent2:#f2a65a; --shadow:0 10px 30px rgba(20,16,12,.08);
   --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,130,70,.30), transparent 45%), linear-gradient(160deg, #fffaf5 0%, #f3e7dc 100%);
   --hero-text:#1b1511; --hero-muted:#5b4c40; --hero-role:#b4461a;
-  --bar-bg: rgba(250,248,245,.88); --bar-text:#16181c; --bar-muted:#5b616a; --bar-line:#e6e2dc; }
+  --bar-bg: rgba(250,248,245,.88); --bar-solid:#faf8f5; --bar-text:#16181c; --bar-muted:#5b616a; --bar-line:#e6e2dc; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0f1012; --card:#18191c; --text:#ecebe8; --muted:#a3a8af;
   --line:#2a2c30; --link:#f59a6a; --shadow:0 10px 30px rgba(0,0,0,.35);
   --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,120,60,.4), transparent 45%), linear-gradient(160deg, #111318 0%, #1d1510 100%);
   --hero-text:#fff; --hero-muted:#ddd6cf; --hero-role:#f2a65a;
-  --bar-bg: rgba(14,15,18,.82); --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; } }
+  --bar-bg: rgba(14,15,18,.82); --bar-solid:#0e0f12; --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; } }
 :root[data-theme="dark"] { --bg:#0f1012; --card:#18191c; --text:#ecebe8; --muted:#a3a8af;
   --line:#2a2c30; --link:#f59a6a; --shadow:0 10px 30px rgba(0,0,0,.35);
   --hero-bg: radial-gradient(circle at 80% 30%, rgba(242,120,60,.4), transparent 45%), linear-gradient(160deg, #111318 0%, #1d1510 100%);
   --hero-text:#fff; --hero-muted:#ddd6cf; --hero-role:#f2a65a;
-  --bar-bg: rgba(14,15,18,.82); --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; }
+  --bar-bg: rgba(14,15,18,.82); --bar-solid:#0e0f12; --bar-text:#fff; --bar-muted:#c9c4be; --bar-line: transparent; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
 a { color: var(--link); text-decoration: none; } a:hover { text-decoration: underline; }
@@ -71,6 +72,8 @@ header.bar .theme-toggle { color: var(--bar-text); }
 footer { color: var(--muted); font-size: 14px; padding: 32px 0 90px; }
 @media (max-width: 860px) {
   .wrap { padding: 0 16px; }
+  header.bar { background: var(--bar-solid); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  header.bar .wrap { min-height: 56px; gap: 14px; }
   .phero { padding: 40px 0 36px; } .phero h1 { font-size: 34px; }
   .pfigs, .pfigs.one { grid-template-columns: 1fr; }
   .pub { grid-template-columns: 1fr; gap: 4px; }
@@ -118,6 +121,9 @@ dialog.lb::backdrop { background: rgba(10, 10, 10, .92); }
   const buttons = [...document.querySelectorAll('.theme-toggle')];
   function paint() {
     const d = isDark();
+    // Safari and Chrome tint their own top bar with this colour.
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = getComputedStyle(root).getPropertyValue('--bar-solid').trim() || getComputedStyle(document.body).backgroundColor;
     for (const b of buttons) {
       b.textContent = d ? '☀' : '☾';
       b.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode');
