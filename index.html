@@ -201,6 +201,8 @@ footer { color: var(--muted); font-size: 14px; padding: 24px 0 90px; }
   .lb .prev, .lb .next { top: auto; bottom: 16px; transform: none; }
 }
 
+/* "hidden" must win over any display rule (the paper filter relies on it) */
+[hidden] { display: none !important; }
 .theme-toggle { font: inherit; font-size: 16px; line-height: 1; width: 36px; height: 36px; flex: none; border-radius: 50%;
   border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; opacity: .75; transition: opacity .2s; }
 .theme-toggle:hover, .theme-toggle:focus-visible { opacity: 1; }
