@@ -11,7 +11,7 @@
 <meta property="og:description" content="Saeid Zare, Ph.D., Senior R&amp;D Engineer at Faber Burner Company: combustion, CFD and thermal-fluid systems. Projects, patents, publications and CV.">
 <meta property="og:url" content="https://saeidzare89.github.io/">
 <meta property="og:image" content="https://saeidzare89.github.io/photo.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239b2c2c'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESZ%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232457d6'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ESZ%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Person", "name": "Saeid Zare", "honorificSuffix": "Ph.D.",
  "jobTitle": "Senior Research and Development Engineer", "worksFor": {"@type": "Organization", "name": "Faber Burner Company"},
@@ -180,7 +180,9 @@ footer { color: var(--muted); font-size: 14px; padding: 24px 0 90px; }
   .menu-btn { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 15px; font-weight: 600; color: var(--bar-text);
     background: transparent; border: 1px solid currentColor; border-radius: 999px; padding: 6px 14px; cursor: pointer; opacity: .85; order: 2; }
   header.bar .theme-toggle { order: 3; }
-  header.bar ul { display: none; position: absolute; top: 100%; left: -16px; right: -16px; flex-direction: column; gap: 0;
+  /* left/right 0, not -16px: .wrap's padding box is already the full width, and -16px made the open menu
+     16px wider than the screen on each side, so a phone could be pushed sideways */
+  header.bar ul { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
     background: var(--bar-solid); padding: 4px 16px 12px; border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px rgba(0,0,0,.18); }
   header.bar.open ul { display: flex; }
   header.bar ul a { display: block; font-size: 17px; padding: 12px 0; border-bottom: 1px solid var(--line); }
@@ -206,6 +208,13 @@ footer { color: var(--muted); font-size: 14px; padding: 24px 0 90px; }
 .theme-toggle { font: inherit; font-size: 16px; line-height: 1; width: 36px; height: 36px; flex: none; border-radius: 50%;
   border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; opacity: .75; transition: opacity .2s; }
 .theme-toggle:hover, .theme-toggle:focus-visible { opacity: 1; }
+
+/* palette: Slate */
+:root { --bg:#f4f6f9; --line:#dfe4ec; --chip:#e8edf5; --link:#1f4fc4; --accent:#2b5fe0; --accent2:#6f98ff; --hero-bg:radial-gradient(circle at 78% 35%, rgba(111,152,255,.26), transparent 42%), radial-gradient(circle at 15% 90%, rgba(43,95,224,.10), transparent 40%), linear-gradient(160deg, #f9fbff 0%, #e6ecf6 100%); --hero-text:#121826; --hero-muted:#4a5568; --hero-role:#1f4fc4; --bar-bg:rgba(244,246,249,.9); --bar-solid:#f4f6f9; --bar-line:#dfe4ec; --ghost:rgba(18,24,38,.25); --ghost-text:#121826; --ring:rgba(111,152,255,.35); --btn-bg:#2457d6; --on-accent:#ffffff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0d1016; --card:#151a23; --text:#e8ebf2; --muted:#a0a9ba; --line:#262e3b; --chip:#1c2330; --link:#9db8ff; --accent:#4a7cff; --accent2:#9db8ff; --hero-bg:radial-gradient(circle at 78% 35%, rgba(74,124,255,.38), transparent 42%), radial-gradient(circle at 15% 90%, rgba(157,184,255,.12), transparent 40%), linear-gradient(160deg, #0d1119 0%, #121c33 100%); --hero-text:#ffffff; --hero-muted:#d0d8e8; --hero-role:#9db8ff; --bar-bg:rgba(13,16,22,.82); --bar-solid:#0d1016; --bar-line:transparent; --ghost:rgba(255,255,255,.35); --ghost-text:#ffffff; --ring:rgba(157,184,255,.30); --btn-bg:#9db8ff; --on-accent:#0b1430; } }
+:root[data-theme="dark"] { --bg:#0d1016; --card:#151a23; --text:#e8ebf2; --muted:#a0a9ba; --line:#262e3b; --chip:#1c2330; --link:#9db8ff; --accent:#4a7cff; --accent2:#9db8ff; --hero-bg:radial-gradient(circle at 78% 35%, rgba(74,124,255,.38), transparent 42%), radial-gradient(circle at 15% 90%, rgba(157,184,255,.12), transparent 40%), linear-gradient(160deg, #0d1119 0%, #121c33 100%); --hero-text:#ffffff; --hero-muted:#d0d8e8; --hero-role:#9db8ff; --bar-bg:rgba(13,16,22,.82); --bar-solid:#0d1016; --bar-line:transparent; --ghost:rgba(255,255,255,.35); --ghost-text:#ffffff; --ring:rgba(157,184,255,.30); --btn-bg:#9db8ff; --on-accent:#0b1430; }
+.hero img { box-shadow: 0 0 0 8px var(--ring), 0 20px 50px rgba(0,0,0,.45); }
+.btn.solid { background: var(--btn-bg); color: var(--on-accent); }
 </style>
 </head>
 <body>
